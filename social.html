@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Stream Overlay</title>
+  <script defer src="/home/max/apps/venatus_imperium/stream_overlay/fontawesome-free/js/all.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green-color: #f00;
+      --cicle-duration: 50s;
+    }
+
+    body, html{
+      padding: 5px;
+      margin: 5px;
+      position: relative;
+    }
+
+    *{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .social{
+      position: absolute;
+      top: 0;
+      padding: 5px 10px;
+      border-radius: 2px;
+      box-shadow: 0px 0px 14px .2px #000;
+      color: #FFFFFF;
+
+      transform: translateX(-1000px);
+      opacity: 0;
+
+      animation: slide-in-left
+                 cubic-bezier(0.250, 0.460, 0.450, 0.940)
+                 infinite;
+
+     animation-delay: calc(var(--cicle-duration) * var(--delay));
+     animation-duration: var(--cicle-duration);
+    }
+
+    .social-youtube {
+      --delay: 0;
+      background-color: #ff0000;
+    }
+
+    .social-instagram {
+      --delay: 0.15;
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    }
+
+    .social-twitter {
+      --delay: 0.30;
+      background-color: #1da1f2;
+    }
+
+    @keyframes slide-in-left {
+      0%, 15% {
+        transform: translateX(-1000px);
+        opacity: 0;
+      }
+
+      5%, 10% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="social social-youtube">
+    <i class="fab fa-youtube"></i>
+    venatusimperium
+  </div>
+
+  <div class="social social-instagram">
+    <i class="fab fa-instagram"></i>
+    venatusimperium
+  </div>
+
+  <div class="social social-twitter">
+    <i class="fab fa-twitter"></i>
+    venatusimperium
+  </div>
+</body>
+</html>
